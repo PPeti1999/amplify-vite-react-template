@@ -6,6 +6,7 @@ const client = generateClient<Schema>();
 
 function App() {
   const { signOut } = useAuthenticator();
+  //const {user, signOut } = useAuthenticator();  h csak mindenki csak a sajat adatat lathassa
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
     client.models.Todo.delete({ id })
   }
   
+  //main be :       <h1>{user?.signInDetails?.loginId}'s todos</h1> h ha mindenki csak a sajat adatat lathassa kiirja a belogolt nevet 
   return (
     <main>
       <h1>My todos</h1>
